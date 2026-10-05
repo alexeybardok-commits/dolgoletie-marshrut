@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+header,
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+nav {
+    display: flex;
+    gap: 24px;
+}
+a {
+    color: #1f4f46;
+    text-decoration: none;
+}
+
+section {
+    margin-bottom: 48px;
+}
+
+h1 {
+    max-width: 760px;
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+h2 {
+    margin-top: 0;
+}

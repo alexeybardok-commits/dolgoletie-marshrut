@@ -92,3 +92,53 @@ a:focus-visible {
     outline: 3px solid #175cd3;
     outline-offset: 4px;
 }
+.hero-button-secondary {
+    display: inline-block;
+    background-color: white;
+    color: #1f4f46;
+    padding: 12px 20px;
+    border: 1px solid #1f4f46;
+    border-radius: 8px;
+    font-weight: 600;
+}
+.hero-photo {
+    display: block;
+    width: 100%;
+    max-width: 310px;
+    height: auto;
+    margin-top: 24px;
+    border-radius: 18px;
+}
+@media (max-width: 600px) {
+    h1 {
+        font-size: 30px;
+    }
+ .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .hero-actions a {
+        text-align: center;
+    }
+
+}
+@media (min-width: 900px) {
+    .hero {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .hero-content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .hero-photo {
+        width: 36%;
+        max-width: 420px;
+        margin-top: 0;
+    }
+}

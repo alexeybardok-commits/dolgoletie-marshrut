@@ -1,0 +1,16 @@
+[
+  {
+    "id": "instructor-a",
+    "name": "Учебный преподаватель А (вымышленный)",
+    "role": "Ведущий демонстрационной группы",
+    "photo": null,
+    "shortBio": null,
+    "experience": null,
+    "qualifications": null
+  },
+  {
+    "id": "instructor-b",
+    "name": "Учебный преподаватель Б (вымышленный)",
+    "role": "Ведущий учебного примера"
+  }
+]

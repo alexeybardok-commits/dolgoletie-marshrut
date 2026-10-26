@@ -1,16 +1,108 @@
-# React + Vite
+# Долголетие Маршрут — React-приложение
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Работающий учебный MVP по ТЗ v1.15 FINAL Development Baseline: локальный
+каталог регулярных групп Екатеринбурга и недельный план. Приложение помогает
+сравнить расписание, условия, месячную стоимость и совместимость занятий.
 
-Currently, two official plugins are available:
+## Установка и запуск
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Из корня репозитория перейдите в `app`. Проверяемая среда: Node.js 24.22.1,
+npm 11.19.1. Все следующие команды выполняются в этой папке.
 
-## React Compiler
+```powershell
+npm.cmd ci
+npm.cmd run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Используйте адрес из вывода Vite. В Windows перед чистой установкой зависимостей
+остановите dev/preview этого проекта, иначе нативный Rolldown может быть
+заблокирован. На других ОС замените `npm.cmd` на `npm`. `.env` не требуется.
 
-## Expanding the ESLint configuration
+| Команда | Назначение |
+| --- | --- |
+| `npm.cmd run dev` | Vite development server |
+| `npm.cmd run typecheck` | Строгая проверка TypeScript приложения и конфигураций |
+| `npm.cmd run lint` | ESLint исходников и проверочных скриптов |
+| `npm.cmd run test` | Vitest однократно, без watch |
+| `npm.cmd run check:catalog` | 41 проверка нормализатора и демонстрационного набора |
+| `npm.cmd run check` | Нормализатор, затем Vitest |
+| `npm.cmd run build` | TypeScript, затем production build в `dist/` |
+| `npm.cmd run preview` | Локальный просмотр уже собранного приложения |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+`dist/`, `node_modules/`, `.env*`, coverage и локальные временные файлы не
+предназначены для коммита. При будущем размещении статический хостинг должен
+поддерживать SPA fallback на `index.html`; публичный deployment здесь не заявлен.
+
+## Стек и структура
+
+React + TypeScript + Vite + React Router; данные JSON; localStorage;
+Vitest и ESLint. Нового сервера, БД, внешнего поиска или AI-рекомендаций нет.
+
+```text
+src/
+  app/                    маршруты, состояние, переходы плана
+  pages/                  Home, Help Select, Catalog, Detail, Added, My Plan
+  components/             layout, общие controls, карточки и недельные сессии
+  data/catalog/           нормализация и локальные JSON регулярных групп
+  types/                  доменная модель v1.15 и отдельные legacy-типы
+  utils/business/         стоимость, фильтры, поиск, порядок, конфликты, агрегат
+  storage/                безопасное чтение и запись ActivityPlan
+  styles/                 существующая визуальная стилистика и адаптивность
+scripts/check-catalog.mjs  проверки нормализатора
+```
+
+Сохранённые legacy-модули и `src/data/activities.json` не подключены к новому
+каталогу и не подмешивают старые разовые события в регулярный план.
+Подробная структура: [src/README.md](src/README.md).
+
+## Основной сценарий
+
+`/` → `/activities` → `/activities/:activityId` → `/activity-added` → `/my-plan`.
+Опционально `/help-select` задаёт ровно пять параметров каталога.
+
+Catalog использует normalize → filter → order → render, показывает только
+active/openNow и сохраняет детерминированный порядок. Поиск работает локально
+по утверждённым текстовым полям; уровень/нагрузка/доступность сочетаются с
+основными фильтрами. Unknown-доступность не считается false, pure online
+не исключается физическим фильтром района или доступности.
+
+Добавление находится только в Detail. Повторное добавление не создаёт дубликат,
+ограничения четырьмя группами нет. My Plan включает каждую валидную сессию,
+показывает месячную сумму, бюджет и неблокирующие предупреждения. При касании
+временных границ конфликта нет; дорога предупреждает при разрыве меньше
+30 минут только между offline-группами на разных площадках.
+
+## Сохранение
+
+Ключ `dolgoletie.activityPlan.v1` хранит только `activityIds`, `monthlyBudget`,
+`estimatedMonthlyTotal`, `createdAt`, `updatedAt`. Повреждённый JSON безопасно
+обрабатывается; неизвестные и повторяющиеся ID отбрасываются, бюджет
+нормализуется, сумма пересчитывается по текущему каталогу.
+
+Другие фильтры, поиск, SelectionPreferences, Undo и контекст успешного Added
+не сохраняются. Старые `myPlan`/`parentPreferences` не читаются и не мигрируются.
+Сведения о контракте: [src/storage/README.md](src/storage/README.md).
+
+## Проверки и ограничения
+
+Предыдущая зафиксированная проверка FE-033–037: 241 тест Vitest в 15 файлах,
+41 проверка нормализатора, typecheck/lint/build — PASS. Проверены Edge,
+ширины 390/768/1024/1440, клавиатура, пустые состояния, warnings, Undo и reload.
+Отдельная повторная проверка ЛР №6 записывается в [отчёт](../docs/LAB6_REPORT.md).
+
+Данные учебные: 13 групп, 15 сессий, 4 направления, 3 площадки, 2 организатора
+и 2 преподавателя. Контакт учебного проекта — `ekanitki@gmail.com`.
+Не реализованы реальная запись, оплата, авторизация, backend, карты, печать,
+экспорт, PWA и синхронизация. При отказе storage выбор работает в памяти,
+но сохранность после reload не гарантируется. Только Edge проверен в браузере;
+формальный WCAG-аудит, screen reader и реальные touch-устройства не проверялись.
+
+## ИИ и границы ЛР №6/№7
+
+Codex участвовал в анализе baseline, реализации TS/React, разработке и запуске
+тестов, проверке Edge и оформлении материалов. Это помощь разработчику,
+а не встроенная продуктовая функция. Студент проверяет результат и отвечает
+за объяснение архитектуры и демонстрацию сценария при сдаче.
+
+Текущие тесты фиксируются вместе с MVP ЛР №6. ЛР №7 пока не выполнена:
+позднее нужен отдельный проверяемый коммит с дополнительными тестами.

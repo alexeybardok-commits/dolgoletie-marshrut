@@ -1,0 +1,107 @@
+[
+  {
+    "id": "session-01",
+    "groupId": "group-walk",
+    "weekday": 1,
+    "startTime": "10:00",
+    "endTime": "11:00"
+  },
+  {
+    "id": "session-02",
+    "groupId": "group-walk",
+    "weekday": 4,
+    "startTime": "11:30",
+    "endTime": "12:30"
+  },
+  {
+    "id": "session-03",
+    "groupId": "group-art",
+    "weekday": 1,
+    "startTime": "10:30",
+    "endTime": "12:00"
+  },
+  {
+    "id": "session-04",
+    "groupId": "group-gap29",
+    "weekday": 1,
+    "startTime": "11:29",
+    "endTime": "12:29"
+  },
+  {
+    "id": "session-05",
+    "groupId": "group-gap30",
+    "weekday": 1,
+    "startTime": "11:30",
+    "endTime": "12:30"
+  },
+  {
+    "id": "session-06",
+    "groupId": "group-online",
+    "weekday": 3,
+    "startTime": "18:00",
+    "endTime": "19:00"
+  },
+  {
+    "id": "session-07",
+    "groupId": "group-hybrid",
+    "weekday": 5,
+    "startTime": "14:00",
+    "endTime": "15:30"
+  },
+  {
+    "id": "session-08",
+    "groupId": "group-budget",
+    "weekday": 2,
+    "startTime": "18:00",
+    "endTime": "19:00"
+  },
+  {
+    "id": "session-09",
+    "groupId": "group-budget",
+    "weekday": 6,
+    "startTime": "09:00",
+    "endTime": "10:00"
+  },
+  {
+    "id": "session-10",
+    "groupId": "group-paused",
+    "weekday": 2,
+    "startTime": "12:00",
+    "endTime": "13:00"
+  },
+  {
+    "id": "session-11",
+    "groupId": "group-completed",
+    "weekday": 3,
+    "startTime": "14:00",
+    "endTime": "15:00"
+  },
+  {
+    "id": "session-12",
+    "groupId": "group-planned",
+    "weekday": 4,
+    "startTime": "17:00",
+    "endTime": "18:00"
+  },
+  {
+    "id": "session-13",
+    "groupId": "group-closed",
+    "weekday": 5,
+    "startTime": "10:00",
+    "endTime": "11:00"
+  },
+  {
+    "id": "session-14",
+    "groupId": "group-waitlist",
+    "weekday": 6,
+    "startTime": "15:00",
+    "endTime": "16:00"
+  },
+  {
+    "id": "session-15",
+    "groupId": "group-future",
+    "weekday": 7,
+    "startTime": "17:00",
+    "endTime": "18:00"
+  }
+]

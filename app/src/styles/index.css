@@ -7,8 +7,13 @@
 
 body {
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 * {
   box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
 }

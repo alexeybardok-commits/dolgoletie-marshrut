@@ -1,0 +1,30 @@
+[
+  {
+    "id": "movement",
+    "name": "Движение",
+    "active": true,
+    "sortOrder": 1,
+    "parentId": null,
+    "description": "Учебное направление спокойной активности."
+  },
+  {
+    "id": "walking",
+    "name": "Прогулки",
+    "active": true,
+    "sortOrder": 2,
+    "parentId": "movement"
+  },
+  {
+    "id": "art",
+    "name": "Творчество",
+    "active": true,
+    "sortOrder": 3,
+    "description": null
+  },
+  {
+    "id": "learning",
+    "name": "Обучение",
+    "active": true,
+    "sortOrder": 4
+  }
+]

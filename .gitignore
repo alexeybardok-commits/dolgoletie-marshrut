@@ -147,3 +147,10 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Local verification artifacts; not part of the lab deliverable
+/mobile-check.png
+/route-check.pdf
+/verify-scenario.mjs
+/.stage-*.mjs
+/.stage-*.png

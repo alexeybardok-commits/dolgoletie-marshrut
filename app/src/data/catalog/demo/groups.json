@@ -1,0 +1,423 @@
+[
+  {
+    "shortDescription": "Учебный пример регулярных занятий.",
+    "description": "Демонстрационная регулярная группа для проверки приложения. Это не подтверждённое мероприятие и не приглашение к посещению.",
+    "tags": [
+      "учебные данные"
+    ],
+    "programModel": "openEnded",
+    "skillLevel": "Для начинающих — учебное значение",
+    "physicalLoad": "Низкая — учебное значение",
+    "organizerId": "demo-project",
+    "instructorIds": [
+      "instructor-a"
+    ],
+    "activityStatus": "active",
+    "enrollmentStatus": "openNow",
+    "entryPolicy": "anySession",
+    "priceType": "perLesson",
+    "priceAmount": 500,
+    "currency": "RUB",
+    "lessonsPerWeek": 2,
+    "source": "Локальный учебный набор FE-007; описание: src/data/catalog/README.md",
+    "lastUpdatedAt": "2026-10-26",
+    "id": "group-walk",
+    "title": "Учебная группа: регулярная ходьба",
+    "directionIds": [
+      "walking"
+    ],
+    "activityFormat": "offline",
+    "venueId": "venue-a",
+    "participationConditions": "Учебные условия: удобная обувь, вода, возможность делать паузы. Реальная запись не осуществляется.",
+    "capacity": 12,
+    "availablePlaces": 6
+  },
+  {
+    "shortDescription": "Учебный пример регулярных занятий.",
+    "description": "Демонстрационная регулярная группа для проверки приложения. Это не подтверждённое мероприятие и не приглашение к посещению.",
+    "tags": [
+      "учебные данные"
+    ],
+    "programModel": "openEnded",
+    "skillLevel": "Для начинающих — учебное значение",
+    "physicalLoad": "Низкая — учебное значение",
+    "organizerId": "demo-studio",
+    "instructorIds": [
+      "instructor-b"
+    ],
+    "activityStatus": "active",
+    "enrollmentStatus": "openNow",
+    "entryPolicy": "anySession",
+    "priceType": "free",
+    "priceAmount": 0,
+    "currency": "RUB",
+    "lessonsPerWeek": 1,
+    "source": "Локальный учебный набор FE-007; описание: src/data/catalog/README.md",
+    "lastUpdatedAt": "2026-10-26",
+    "id": "group-art",
+    "title": "Учебная группа: акварель",
+    "directionIds": [
+      "art"
+    ],
+    "activityFormat": "offline",
+    "venueId": "venue-b",
+    "participationConditions": "Учебный пример: материалы включены; навыки рисования не требуются."
+  },
+  {
+    "shortDescription": "Учебный пример регулярных занятий.",
+    "description": "Демонстрационная регулярная группа для проверки приложения. Это не подтверждённое мероприятие и не приглашение к посещению.",
+    "tags": [
+      "учебные данные"
+    ],
+    "programModel": "openEnded",
+    "skillLevel": "Для начинающих — учебное значение",
+    "physicalLoad": "Низкая — учебное значение",
+    "organizerId": "demo-project",
+    "instructorIds": [
+      "instructor-a"
+    ],
+    "activityStatus": "active",
+    "enrollmentStatus": "openNow",
+    "entryPolicy": "anySession",
+    "priceType": "monthly",
+    "priceAmount": 2500,
+    "currency": "RUB",
+    "lessonsPerWeek": 1,
+    "source": "Локальный учебный набор FE-007; описание: src/data/catalog/README.md",
+    "lastUpdatedAt": "2026-10-26",
+    "id": "group-gap29",
+    "title": "Учебная группа: рисунок после прогулки (29 минут)",
+    "directionIds": [
+      "art"
+    ],
+    "activityFormat": "offline",
+    "venueId": "venue-b"
+  },
+  {
+    "shortDescription": "Учебный пример регулярных занятий.",
+    "description": "Демонстрационная регулярная группа для проверки приложения. Это не подтверждённое мероприятие и не приглашение к посещению.",
+    "tags": [
+      "учебные данные"
+    ],
+    "programModel": "openEnded",
+    "skillLevel": "Для начинающих — учебное значение",
+    "physicalLoad": "Низкая — учебное значение",
+    "organizerId": "demo-project",
+    "instructorIds": [
+      "instructor-a"
+    ],
+    "activityStatus": "active",
+    "enrollmentStatus": "openNow",
+    "entryPolicy": "anySession",
+    "priceType": "monthly",
+    "priceAmount": 3000,
+    "currency": "RUB",
+    "lessonsPerWeek": 1,
+    "source": "Локальный учебный набор FE-007; описание: src/data/catalog/README.md",
+    "lastUpdatedAt": "2026-10-26",
+    "id": "group-gap30",
+    "title": "Учебная группа: движение после прогулки (30 минут)",
+    "directionIds": [
+      "movement"
+    ],
+    "activityFormat": "offline",
+    "venueId": "venue-c",
+    "capacity": null,
+    "availablePlaces": null
+  },
+  {
+    "shortDescription": "Учебный пример регулярных занятий.",
+    "description": "Демонстрационная регулярная группа для проверки приложения. Это не подтверждённое мероприятие и не приглашение к посещению.",
+    "tags": [
+      "учебные данные"
+    ],
+    "programModel": "openEnded",
+    "skillLevel": "Для начинающих — учебное значение",
+    "physicalLoad": "Низкая — учебное значение",
+    "organizerId": "demo-project",
+    "instructorIds": [
+      "instructor-a"
+    ],
+    "activityStatus": "active",
+    "enrollmentStatus": "openNow",
+    "entryPolicy": "anySession",
+    "priceType": "free",
+    "priceAmount": 0,
+    "currency": "RUB",
+    "lessonsPerWeek": 1,
+    "source": "Локальный учебный набор FE-007; описание: src/data/catalog/README.md",
+    "lastUpdatedAt": "2026-10-26",
+    "id": "group-online",
+    "title": "Учебная онлайн-группа: цифровые навыки",
+    "directionIds": [
+      "learning"
+    ],
+    "activityFormat": "online",
+    "onlineDetails": {
+      "platform": "Учебная видеокомната (не сервис подключения)",
+      "deviceRequirements": "Учебный пример: устройство с браузером, звук и интернет.",
+      "connectionInstructions": "Демонстрация: ссылка на реальное подключение не предоставляется.",
+      "supportContact": "ekanitki@gmail.com"
+    }
+  },
+  {
+    "shortDescription": "Учебный пример регулярных занятий.",
+    "description": "Демонстрационная регулярная группа для проверки приложения. Это не подтверждённое мероприятие и не приглашение к посещению.",
+    "tags": [
+      "учебные данные"
+    ],
+    "programModel": "rollingModules",
+    "skillLevel": "Для начинающих — учебное значение",
+    "physicalLoad": "Низкая — учебное значение",
+    "organizerId": "demo-project",
+    "instructorIds": [
+      "instructor-a"
+    ],
+    "activityStatus": "active",
+    "enrollmentStatus": "openNow",
+    "entryPolicy": "nextModule",
+    "priceType": "monthly",
+    "priceAmount": 5000,
+    "currency": "RUB",
+    "lessonsPerWeek": 1,
+    "source": "Локальный учебный набор FE-007; описание: src/data/catalog/README.md",
+    "lastUpdatedAt": "2026-10-26",
+    "id": "group-hybrid",
+    "title": "Учебная гибридная группа: творческая мастерская",
+    "directionIds": [
+      "art",
+      "learning"
+    ],
+    "activityFormat": "hybrid",
+    "venueId": "venue-c",
+    "nextEntryDate": "2026-11-01",
+    "onlineDetails": {
+      "platform": "Учебная гибридная площадка",
+      "deviceRequirements": "Учебный пример: компьютер или телефон с камерой.",
+      "connectionInstructions": "Подключение не осуществляется; это сценарий для проверки блока Detail.",
+      "supportContact": "ekanitki@gmail.com"
+    }
+  },
+  {
+    "shortDescription": "Учебный пример регулярных занятий.",
+    "description": "Демонстрационная регулярная группа для проверки приложения. Это не подтверждённое мероприятие и не приглашение к посещению.",
+    "tags": [
+      "учебные данные"
+    ],
+    "programModel": "openEnded",
+    "skillLevel": "Для начинающих — учебное значение",
+    "physicalLoad": "Низкая — учебное значение",
+    "organizerId": "demo-project",
+    "instructorIds": [
+      "instructor-a"
+    ],
+    "activityStatus": "active",
+    "enrollmentStatus": "openNow",
+    "entryPolicy": "anySession",
+    "priceType": "perLesson",
+    "priceAmount": 1500,
+    "currency": "RUB",
+    "lessonsPerWeek": 2,
+    "source": "Локальный учебный набор FE-007; описание: src/data/catalog/README.md",
+    "lastUpdatedAt": "2026-10-26",
+    "id": "group-budget",
+    "title": "Учебная группа: занятия дважды в неделю",
+    "directionIds": [
+      "learning"
+    ],
+    "activityFormat": "online",
+    "venueId": null,
+    "onlineDetails": {
+      "supportContact": "ekanitki@gmail.com"
+    }
+  },
+  {
+    "shortDescription": "Учебный пример регулярных занятий.",
+    "description": "Демонстрационная регулярная группа для проверки приложения. Это не подтверждённое мероприятие и не приглашение к посещению.",
+    "tags": [
+      "учебные данные"
+    ],
+    "programModel": "openEnded",
+    "skillLevel": "Для начинающих — учебное значение",
+    "physicalLoad": "Низкая — учебное значение",
+    "organizerId": "demo-project",
+    "instructorIds": [
+      "instructor-a"
+    ],
+    "activityStatus": "paused",
+    "enrollmentStatus": "closed",
+    "entryPolicy": "anySession",
+    "priceType": "free",
+    "priceAmount": 0,
+    "currency": "RUB",
+    "lessonsPerWeek": 1,
+    "source": "Локальный учебный набор FE-007; описание: src/data/catalog/README.md",
+    "lastUpdatedAt": "2026-10-26",
+    "id": "group-paused",
+    "title": "Учебная группа: временно приостановлена",
+    "directionIds": [
+      "movement"
+    ],
+    "activityFormat": "offline",
+    "venueId": "venue-a"
+  },
+  {
+    "shortDescription": "Учебный пример регулярных занятий.",
+    "description": "Демонстрационная регулярная группа для проверки приложения. Это не подтверждённое мероприятие и не приглашение к посещению.",
+    "tags": [
+      "учебные данные"
+    ],
+    "programModel": "openEnded",
+    "skillLevel": "Для начинающих — учебное значение",
+    "physicalLoad": "Низкая — учебное значение",
+    "organizerId": "demo-project",
+    "instructorIds": [
+      "instructor-a"
+    ],
+    "activityStatus": "completed",
+    "enrollmentStatus": "closed",
+    "entryPolicy": "anySession",
+    "priceType": "free",
+    "priceAmount": 0,
+    "currency": "RUB",
+    "lessonsPerWeek": 1,
+    "source": "Локальный учебный набор FE-007; описание: src/data/catalog/README.md",
+    "lastUpdatedAt": "2026-10-26",
+    "id": "group-completed",
+    "title": "Учебная группа: программа завершена",
+    "directionIds": [
+      "art"
+    ],
+    "activityFormat": "offline",
+    "venueId": "venue-b"
+  },
+  {
+    "shortDescription": "Учебный пример регулярных занятий.",
+    "description": "Демонстрационная регулярная группа для проверки приложения. Это не подтверждённое мероприятие и не приглашение к посещению.",
+    "tags": [
+      "учебные данные"
+    ],
+    "programModel": "openEnded",
+    "skillLevel": "Для начинающих — учебное значение",
+    "physicalLoad": "Низкая — учебное значение",
+    "organizerId": "demo-project",
+    "instructorIds": [
+      "instructor-a"
+    ],
+    "activityStatus": "planned",
+    "enrollmentStatus": "openFromDate",
+    "entryPolicy": "anySession",
+    "priceType": "free",
+    "priceAmount": 0,
+    "currency": "RUB",
+    "lessonsPerWeek": 1,
+    "source": "Локальный учебный набор FE-007; описание: src/data/catalog/README.md",
+    "lastUpdatedAt": "2026-10-26",
+    "id": "group-planned",
+    "title": "Учебная группа: программа запланирована",
+    "directionIds": [
+      "learning"
+    ],
+    "activityFormat": "hybrid",
+    "venueId": "venue-c",
+    "nextEntryDate": "2026-12-01",
+    "onlineDetails": {
+      "supportContact": "ekanitki@gmail.com"
+    }
+  },
+  {
+    "shortDescription": "Учебный пример регулярных занятий.",
+    "description": "Демонстрационная регулярная группа для проверки приложения. Это не подтверждённое мероприятие и не приглашение к посещению.",
+    "tags": [
+      "учебные данные"
+    ],
+    "programModel": "openEnded",
+    "skillLevel": "Для начинающих — учебное значение",
+    "physicalLoad": "Низкая — учебное значение",
+    "organizerId": "demo-project",
+    "instructorIds": [
+      "instructor-a"
+    ],
+    "activityStatus": "active",
+    "enrollmentStatus": "closed",
+    "entryPolicy": "anySession",
+    "priceType": "free",
+    "priceAmount": 0,
+    "currency": "RUB",
+    "lessonsPerWeek": 1,
+    "source": "Локальный учебный набор FE-007; описание: src/data/catalog/README.md",
+    "lastUpdatedAt": "2026-10-26",
+    "id": "group-closed",
+    "title": "Учебная группа: набор закрыт",
+    "directionIds": [
+      "art"
+    ],
+    "activityFormat": "offline",
+    "venueId": "venue-b"
+  },
+  {
+    "shortDescription": "Учебный пример регулярных занятий.",
+    "description": "Демонстрационная регулярная группа для проверки приложения. Это не подтверждённое мероприятие и не приглашение к посещению.",
+    "tags": [
+      "учебные данные"
+    ],
+    "programModel": "openEnded",
+    "skillLevel": "Для начинающих — учебное значение",
+    "physicalLoad": "Низкая — учебное значение",
+    "organizerId": "demo-project",
+    "instructorIds": [
+      "instructor-a"
+    ],
+    "activityStatus": "active",
+    "enrollmentStatus": "waitlist",
+    "entryPolicy": "anySession",
+    "priceType": "free",
+    "priceAmount": 0,
+    "currency": "RUB",
+    "lessonsPerWeek": 1,
+    "source": "Локальный учебный набор FE-007; описание: src/data/catalog/README.md",
+    "lastUpdatedAt": "2026-10-26",
+    "id": "group-waitlist",
+    "title": "Учебная группа: лист ожидания",
+    "directionIds": [
+      "learning"
+    ],
+    "activityFormat": "online",
+    "capacity": 10,
+    "availablePlaces": 0,
+    "onlineDetails": {
+      "supportContact": "ekanitki@gmail.com"
+    }
+  },
+  {
+    "shortDescription": "Учебный пример регулярных занятий.",
+    "description": "Демонстрационная регулярная группа для проверки приложения. Это не подтверждённое мероприятие и не приглашение к посещению.",
+    "tags": [
+      "учебные данные"
+    ],
+    "programModel": "openEnded",
+    "skillLevel": "Для начинающих — учебное значение",
+    "physicalLoad": "Низкая — учебное значение",
+    "organizerId": "demo-project",
+    "instructorIds": [
+      "instructor-a"
+    ],
+    "activityStatus": "active",
+    "enrollmentStatus": "openFromDate",
+    "entryPolicy": "anySession",
+    "priceType": "free",
+    "priceAmount": 0,
+    "currency": "RUB",
+    "lessonsPerWeek": 1,
+    "source": "Локальный учебный набор FE-007; описание: src/data/catalog/README.md",
+    "lastUpdatedAt": "2026-10-26",
+    "id": "group-future",
+    "title": "Учебная группа: набор с будущей даты",
+    "directionIds": [
+      "movement"
+    ],
+    "activityFormat": "offline",
+    "venueId": "venue-c",
+    "nextEntryDate": "2026-12-01"
+  }
+]

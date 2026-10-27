@@ -1,0 +1,55 @@
+import { expect, test } from '@playwright/test'
+import { openCatalog, titles } from './support'
+
+test.use({ storageState: { cookies: [], origins: [] } })
+
+for (const width of [375, 768, 1280]) {
+  test(`UX-03 catalog plan bar follows shared plan at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 })
+    await openCatalog(page)
+    const bar = page.getByRole('complementary', { name: 'Краткая информация о плане', exact: true })
+    await expect(bar).toHaveCount(0)
+    await page.getByRole('button', { name: `Добавить в план: ${titles.walk}`, exact: true }).click()
+    await expect(bar).toBeVisible()
+    await expect(bar).toContainText('Выбрано групп: 1')
+    await expect(bar).toContainText(/4\s?000 ₽/)
+    await page.getByRole('button', { name: `Добавить в план: ${titles.gap29}`, exact: true }).click()
+    await expect(bar).toContainText('Выбрано групп: 2')
+    await expect(bar).toContainText(/6\s?500 ₽/)
+    await page.reload()
+    await expect(bar).toContainText('Выбрано групп: 2')
+    await expect(bar).toContainText(/6\s?500 ₽/)
+    // Bottom reserve must allow even the last card's actions above the fixed bar.
+    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight))
+    const lastCard = page.getByRole('article').last()
+    const barBox = await bar.boundingBox()
+    for (const action of [lastCard.getByRole('link', { name: /Подробнее/ }), lastCard.getByRole('button')]) {
+      const box = await action.boundingBox()
+      expect(box).not.toBeNull(); expect(barBox).not.toBeNull()
+      if (!box || !barBox) throw new Error('Missing layout box')
+      expect(box.y + box.height).toBeLessThanOrEqual(barBox.y)
+    }
+    await lastCard.getByRole('link', { name: /Подробнее/ }).click({ trial: true })
+    await lastCard.getByRole('button').click({ trial: true })
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+    const go = bar.getByRole('link', { name: 'В мой план', exact: true })
+    await go.focus()
+    await expect(go).toBeFocused()
+    await page.keyboard.press('Enter')
+    await expect(page).toHaveURL('/my-plan')
+    await expect(bar).toHaveCount(0)
+    await page.getByRole('button', { name: `Удалить из плана: ${titles.gap29}`, exact: true }).click()
+    await page.getByRole('link', { name: 'Добавить ещё', exact: true }).click()
+    await expect(bar).toContainText('Выбрано групп: 1')
+    await expect(bar).toContainText(/4\s?000 ₽/)
+    await bar.getByRole('link', { name: 'В мой план', exact: true }).click()
+    await page.getByRole('button', { name: `Удалить из плана: ${titles.walk}`, exact: true }).click()
+    await page.getByRole('link', { name: 'Найти занятия', exact: true }).click()
+    await expect(bar).toHaveCount(0)
+    await page.getByRole('link', { name: 'Мой план', exact: true }).click()
+    await page.getByRole('button', { name: 'Отменить удаление', exact: true }).click()
+    await page.getByRole('link', { name: 'Добавить ещё', exact: true }).click()
+    await expect(bar).toContainText('Выбрано групп: 1')
+    await expect(bar).toContainText(/4\s?000 ₽/)
+  })
+}

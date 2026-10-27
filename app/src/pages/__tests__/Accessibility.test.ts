@@ -46,7 +46,7 @@ describe('FE-033–037 semantic UI contracts', () => {
     expect(html).not.toContain('tabindex="1"')
   })
   it('provides native names for all additional selects and preserves live result feedback', () => {
-    const html = render(createElement(CatalogPage, { data: demo, filters: emptyCatalogFilters(), onChange: () => {} }))
+    const html = render(createElement(CatalogPage, { estimatedMonthlyTotal: 0, activityIds: [], onAdd: () => {}, data: demo, filters: emptyCatalogFilters(), onChange: () => {} }))
     for (const id of ['catalog-query', 'activity-format', 'monthly-budget', 'venue-elevator', 'venue-step-free']) {
       expect(html).toContain(`for="${id}"`)
       expect(html).toContain(`id="${id}"`)

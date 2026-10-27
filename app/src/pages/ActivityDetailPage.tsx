@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useNavigationType, useParams } from 'react-router-dom'
 import type { CatalogData } from '../data/catalog'
 import type { AdditionContext } from '../app/additionContext'
 import { calculateGroupCosts } from '../utils/business'
@@ -12,6 +12,11 @@ export default function ActivityDetailPage({ data, activityIds, onAdd }: {
 }) {
   const { activityId } = useParams()
   const navigate = useNavigate()
+  const location = useLocation()
+  const navigationType = useNavigationType()
+  // history.state survives reload; only a fresh explicit in-app transition
+  // may select My Plan as the return destination. Initial/POP loads fall back.
+  const fromPlan = navigationType === 'PUSH' && location.state?.from === '/my-plan'
   const source = data.groups.find(group => group.id === activityId)
   if (!source) return <section className="section"><h1>Занятие не найдено</h1><p>Проверьте ссылку или выберите занятие в каталоге.</p><Link className="hero-button-secondary" to="/activities">Вернуться в каталог</Link></section>
   const group = calculateGroupCosts([source], data.schedules)[0]
@@ -20,7 +25,7 @@ export default function ActivityDetailPage({ data, activityIds, onAdd }: {
   const schedule = data.schedules.filter(session => session.groupId === group.id).sort((a, b) => a.weekday - b.weekday || a.startTime.localeCompare(b.startTime))
   const selected = activityIds.includes(group.id)
   return <article className="section activity-detail regular-detail">
-    <Link to="/activities">← Вернуться в каталог</Link>
+    <Link to={fromPlan ? '/my-plan' : '/activities'}>{fromPlan ? '← Вернуться в мой план' : '← Вернуться в каталог'}</Link>
     <h1>{group.title}</h1>
     <p className="notice">Учебные данные: группа, преподаватели и площадка демонстрационные. Это не подтверждённое предложение и не запись на занятие. Указанные контакты относятся к учебному проекту.</p>
     <p className="category">{group.directionIds.map(id => data.directions.find(direction => direction.id === id)?.name ?? MISSING_INFORMATION).join(' · ')}</p>

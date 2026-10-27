@@ -7,7 +7,7 @@ import { emptyCatalogFilters } from '../../utils/business'
 import { demo } from '../../utils/business/__tests__/fixtures'
 import type { CatalogFilters } from '../../utils/business'
 
-const render = (filters: CatalogFilters) => renderToStaticMarkup(createElement(MemoryRouter, null, createElement(CatalogPage, { data: demo, filters, onChange: () => {} })))
+const render = (filters: CatalogFilters) => renderToStaticMarkup(createElement(MemoryRouter, null, createElement(CatalogPage, { estimatedMonthlyTotal: 0, activityIds: [], onAdd: () => {}, data: demo, filters, onChange: () => {} })))
 
 describe('FE-023/024 Catalog controls', () => {
   it('renders search, extra fields, removal actions and unchanged main fields', () => {

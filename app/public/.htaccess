@@ -1,0 +1,8 @@
+# Deploy this file only in this application's document root.
+# Existing files/directories are served normally; SPA routes use index.html.
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^ /index.html [L]

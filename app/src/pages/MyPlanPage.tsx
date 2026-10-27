@@ -42,11 +42,14 @@ export default function MyPlanPage({ data, summary, lastRemoval, onRemove, onUnd
     <PlanWarnings summary={summary} />
     {summary.groups.length === 0 ? <div className="empty-plan"><h2>В плане пока нет занятий</h2><p>Найдите регулярные группы и добавьте их с подробной страницы.</p><Link className="hero-button" to="/activities">Найти занятия</Link></div> : <>
       <section aria-labelledby="selected-title"><h2 id="selected-title">Выбранные занятия</h2><ul className="selected-groups">{summary.groups.map(group => <li className="activity-card selected-group" key={group.id} data-group-id={group.id}>
-        <h3>{group.title}</h3><p>Ориентировочно за месяц: {money(group.estimatedMonthlyCost)}</p><Link ref={element => { if (element) groupLinks.current.set(group.id, element); else groupLinks.current.delete(group.id) }} to={`/activities/${group.id}`}>Подробнее<span className="sr-only">: {group.title}</span></Link>
-        <button type="button" onClick={() => remove(group.id)} aria-label={`Удалить из плана: ${group.title}`}>Удалить из плана</button>
+        <h3>{group.title}</h3><p>Ориентировочно за месяц: {money(group.estimatedMonthlyCost)}</p>
+        <div className="selected-group-actions">
+          <Link ref={element => { if (element) groupLinks.current.set(group.id, element); else groupLinks.current.delete(group.id) }} to={`/activities/${group.id}`} state={{ from: '/my-plan' }}>Подробнее<span className="sr-only">: {group.title}</span></Link>
+          <button type="button" onClick={() => remove(group.id)} aria-label={`Удалить из плана: ${group.title}`}>Удалить из плана</button>
+        </div>
       </li>)}</ul></section>
       <WeeklySchedule summary={summary} data={data} />
     </>}
-    <div className="hero-actions"><Link className="hero-button-secondary" to="/activities">Добавить ещё</Link></div>
+    {summary.groups.length > 0 && <div className="hero-actions"><Link className="hero-button-secondary" to="/activities">Добавить ещё</Link></div>}
   </section>
 }

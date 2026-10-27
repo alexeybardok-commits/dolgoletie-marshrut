@@ -56,7 +56,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/help-select" element={<HelpSelectPage data={catalog} onApply={updateFilters} />} />
-        <Route path="/activities" element={<CatalogPage data={catalog} filters={filters} onChange={updateFilters} />} />
+        <Route path="/activities" element={<CatalogPage data={catalog} filters={filters} onChange={updateFilters} activityIds={summary.activityIds} onAdd={addGroup} estimatedMonthlyTotal={summary.estimatedMonthlyTotal} />} />
         <Route path="/activities/:activityId" element={<ActivityDetailPage data={catalog} activityIds={summary.activityIds} onAdd={addGroup} />} />
         <Route path="/activity-added" element={<ActivityAddedPage data={catalog} recentAddition={recentAddition} activityIds={summary.activityIds} />} />
         <Route path="/my-plan" element={<MyPlanPage data={catalog} summary={summary} lastRemoval={session.lastRemoval} onRemove={removeGroup} onUndo={() => dispatch({ type: 'undo', now: new Date().toISOString() })} storageStatus={storageStatus} />} />

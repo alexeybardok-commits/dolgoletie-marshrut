@@ -19,6 +19,8 @@ describe('FE-028–031 My Plan view', () => {
     const html = renderPlan([])
     for (const text of ['Выбрано групп: 0', 'Ориентировочно за месяц: 0 ₽', 'Стоимость не важна', 'В плане пока нет занятий', 'Найти занятия']) expect(html).toContain(text)
     expect(html).not.toContain('data-session-id')
+    expect(html.match(/>Найти занятия<\/a>/g)).toHaveLength(1)
+    expect(html).not.toContain('Добавить ещё')
   })
   it('renders seven unique groups and all nine obligatory sessions', () => {
     const html = renderPlan(demo.groups.slice(0, 7).map(group => group.id))
@@ -29,6 +31,7 @@ describe('FE-028–031 My Plan view', () => {
     expect(html.match(/data-weekday=/g)).toHaveLength(7)
     expect(html).toContain('href="/activities/group-walk"')
     expect(html).toContain('Добавить ещё')
+    expect(html).not.toContain('Найти занятия')
   })
   it('shows both weekly sessions of one group with weekday, interval and place', () => {
     const html = renderPlan(['group-walk'])
@@ -64,5 +67,7 @@ describe('FE-028–031 My Plan view', () => {
     expect(html).toContain('В плане пока нет занятий')
     expect(html).toContain('Отменить удаление')
     expect(html).toContain('Удалено: Учебная группа: регулярная ходьба')
+    expect(html).toContain('Найти занятия')
+    expect(html).not.toContain('Добавить ещё')
   })
 })

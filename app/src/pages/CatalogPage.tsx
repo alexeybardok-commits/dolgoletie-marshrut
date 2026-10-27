@@ -7,8 +7,9 @@ import CatalogFields from '../components/common/CatalogFields'
 import ActiveFilters from '../components/activities/ActiveFilters'
 import ActivityCard from '../components/activities/ActivityCard'
 import AdditionalFilters from '../components/activities/AdditionalFilters'
+import CatalogPlanBar from '../components/activities/CatalogPlanBar'
 
-export default function CatalogPage({ data, filters, onChange }: { data: CatalogData; filters: CatalogFilters; onChange: (filters: CatalogFilters) => void }) {
+export default function CatalogPage({ data, filters, onChange, activityIds, onAdd, estimatedMonthlyTotal }: { estimatedMonthlyTotal: number; activityIds: readonly string[]; onAdd: (id: string) => unknown; data: CatalogData; filters: CatalogFilters; onChange: (filters: CatalogFilters) => void }) {
   const search = useRef<HTMLInputElement>(null)
   const groups = orderCatalog(filterCatalog(data, filters), data.venues, filters.areaIds)
   const reset = () => onChange(emptyCatalogFilters())
@@ -30,6 +31,7 @@ export default function CatalogPage({ data, filters, onChange }: { data: Catalog
     <ActiveFilters data={data} filters={filters} onChange={onChange} />
     <p role="status">Найдено групп: {groups.length}</p>
     {groups.length === 0 ? <div className="notice empty-catalog"><h2>По этим условиям занятий нет</h2><p>Попробуйте изменить поисковый запрос или выбранные условия.</p><div className="hero-actions"><a className="hero-button-secondary" href="#catalog-filters">Изменить фильтры</a><button type="button" className="hero-button" onClick={resetFromEmpty}>Сбросить фильтры</button></div></div>
-      : <div className="activity-grid">{groups.map(group => <ActivityCard key={group.id} group={group} data={data} />)}</div>}
+      : <div className="activity-grid">{groups.map(group => <ActivityCard key={group.id} group={group} data={data} selected={activityIds.includes(group.id)} onAdd={onAdd} />)}</div>}
+    {activityIds.length > 0 && <CatalogPlanBar count={activityIds.length} total={estimatedMonthlyTotal} />}
   </section>
 }

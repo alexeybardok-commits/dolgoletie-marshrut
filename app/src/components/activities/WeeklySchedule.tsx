@@ -14,7 +14,7 @@ export default function WeeklySchedule({ summary, data }: { summary: PlanSummary
           const conflict = summary.timeConflicts.some(warning => warning.first.session.id === session.id || warning.second.session.id === session.id)
           const road = summary.roadWarnings.some(warning => warning.first.session.id === session.id || warning.second.session.id === session.id)
           return <li key={session.id} className="weekly-session" data-session-id={session.id}>
-            <p className="session-time">{session.startTime}–{session.endTime}</p><h4><Link to={`/activities/${group.id}`}>{group.title}</Link></h4>
+            <p className="session-time">{session.startTime}–{session.endTime}</p><h4><Link to={`/activities/${group.id}`} state={{ from: '/my-plan' }}>{group.title}</Link></h4>
             <p>{GROUP_FORMAT_LABELS[group.activityFormat]}</p>
             {group.activityFormat === 'online' ? <p>Онлайн — без привязки к району</p> : <p>{venue ? `${venue.name} · ${venue.area} · ${venue.address}` : MISSING_INFORMATION}</p>}
             {(conflict || road) && <p className="session-warning"><a href="#plan-warnings">{conflict ? 'Пересечение по времени. ' : ''}{road ? 'Проверьте время на дорогу. ' : ''}Посмотреть предупреждения</a></p>}

@@ -8,6 +8,10 @@
 Baseline и Frontend Backlog FINAL в [docs](docs/). Материалы предыдущих
 лабораторных в [tempPage](tempPage/) сохранены отдельно.
 
+## Работающий сайт
+
+[Открыть «Долголетие Маршрут»](https://dolgoletie.initki.ru/)
+
 ## Технологии
 
 React, TypeScript (strict), Vite, React Router, локальные JSON-данные,
